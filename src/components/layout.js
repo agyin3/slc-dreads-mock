@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import { ThemeProvider } from "@material-ui/core"
+import theme from "../theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,13 +26,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          margin: `0 auto`
         }}
       >
         <main>{children}</main>
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 
