@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Button, withStyles, Icon } from '@material-ui/core'
+import { Box, Typography, Button, withStyles } from '@material-ui/core'
 import bgImg from '../images/slc-dreads-homepage.jpg'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -30,7 +30,10 @@ const CustomBox = withStyles({
         alignItems:'center',
         justifyContent:'center',
         '@media (min-width: 600px)': {
-            paddingTop:'10vh'
+            paddingTop:'10vh',
+        },
+        '@media (min-width: 1366px)': {
+            backgroundAttachment: 'fixed',
         }
     }
 })(Box)
@@ -41,7 +44,6 @@ const H1 = withStyles({
         width: '90%', 
         textAlign: 'center',
         fontSize: '5.6em',
-        fontFamily: 'Yanone Kaffeesatz, cursive',
         margin: '20px auto'
     }
 })(Typography)
