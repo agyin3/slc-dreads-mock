@@ -23,4 +23,17 @@ const theme = createMuiTheme({
     }
 })
 
+theme.typography.h1 = {
+    fontFamily: 'Yanone Kaffeesatz, cursive'
+}
+
+theme.typography.h2 = {
+    fontFamily: 'Yanone Kaffeesatz, cursive',
+    fontSize: '3.6em'
+}
+
+theme.typography.h3 = {
+    fontFamily: 'Yanone Kaffeesatz, cursive'
+}
+
 export default theme

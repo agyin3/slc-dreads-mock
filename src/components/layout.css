@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+:root{
+  --primary-main: #FFDC5C;
+  --primary-light: #FFDD67;
+  --primary-dark: #FFD747;
+  --secondary-main: #FFCD38;
+  --seconday-light: #FFCD38;
+  --secondary-dark: #FFC71F;
+  --background-default: #000000;
+  --white: #FFF;
+  --black: #000;
+  --font-heading: 'Yanone Kaffeesatz, cursive';
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
