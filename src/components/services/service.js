@@ -13,7 +13,39 @@ const ServiceBox = withStyles({
         justifyContent: 'center',
         alignItems: 'center',
         padding: '5% 0',
+        '&:nth-child(1)': {
+          borderRight: 'none',
+          borderBottom: '3px solid var(--secondary-main)'
+        },
+        '&:nth-child(2)': {
+          borderRight: 'none',
+          borderBottom: '3px solid var(--secondary-main)'
+        },
+        '@media (min-width: 1000px)': {
+          width: '33%',
+          '&:nth-child(1)': {
+            borderBottom: 'none',
+            borderRight: '3px solid var(--secondary-main)'
+          },
+          '&:nth-child(2)': {
+            borderBottom: 'none',
+            borderRight: '3px solid var(--secondary-main)'
+          }
+      }
     }
+})(Box)
+
+const ServicesWrapper = withStyles({
+  root: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '7.5% 0',
+      '@media (min-width: 1000px)': {
+          flexDirection: 'row'
+      }
+  }
 })(Box)
 
 const ServiceText = withStyles({
@@ -53,15 +85,15 @@ const Service = () => {
       }
     `)
     return (
-        <>
-        <ServiceBox style={{borderBottom: '3px solid var(--secondary-main)'}}>
+        <ServicesWrapper>
+        <ServiceBox>
             <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image1.childImageSharp.fluid} />
             <ServiceText component='p'>
                 New Dreadlocks
             </ServiceText>
         </ServiceBox>
 
-        <ServiceBox style={{borderBottom: '3px solid var(--secondary-main)'}}>
+        <ServiceBox>
             <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image2.childImageSharp.fluid} />
             <ServiceText component='p'>
                 Maintanence
@@ -74,7 +106,7 @@ const Service = () => {
                 Wraps & Beads
             </ServiceText>
         </ServiceBox>
-        </>
+        </ServicesWrapper>
     )
 }
 
