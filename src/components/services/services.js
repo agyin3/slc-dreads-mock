@@ -1,6 +1,7 @@
 import React from 'react'
-import { withStyles, Box, Typography } from '@material-ui/core'
+import { withStyles, Box } from '@material-ui/core'
 import Service from './service'
+import SubHeading from '../ui/SubHeading'
 
 const ServicesBox = withStyles({
     root: {
@@ -9,20 +10,11 @@ const ServicesBox = withStyles({
     }
 })(Box)
 
-const ServicesHeading = withStyles({
-    root: {
-        color: 'var(--white)',
-        textAlign: 'center'
-    }
-})(Typography)
-
 
 const Services = () => {
     return(
         <ServicesBox>
-            <ServicesHeading variant='h2' component='h2'>
-                Featured Services
-            </ServicesHeading>
+            <SubHeading text='Featured Services' />
             <Service />
         </ServicesBox>
     )
