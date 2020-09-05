@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Hero from '../components/hero'
 import Services from "../components/services/services"
 import Book from "../components/book/book"
+import About from "../components/about/about"
 
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <Hero sitetitle='Salt Lake City Dreadlock Shop' />
     <Services />
     <Book />
+    <About />
   </Layout>
 )
 
