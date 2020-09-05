@@ -16,10 +16,7 @@ const BookBox = withStyles({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'center',
-        '@media (min-width: 600px)': {
-            paddingTop:'10vh',
-        },
+        padding: '7.5% 0',
         '@media (min-width: 1366px)': {
             backgroundAttachment: 'fixed',
         }

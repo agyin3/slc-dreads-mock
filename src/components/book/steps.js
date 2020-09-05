@@ -6,7 +6,11 @@ const StepsWrapper = withStyles({
         display: 'flex',
         flexDirection: 'column',
         height: '70%',
-        padding: '0, 2.5em'
+        padding: '5% 1.5em',
+        '@media (min-width: 1000px)': {
+            padding: '.5% 1.5em',
+            height: '90%'
+        }
     }
 })(Box)
 
@@ -16,7 +20,10 @@ const StepsBox = withStyles({
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '90%',
-        height: '30%'
+        height: '30%',
+        '@media (min-width:1000px)': {
+            marginBottom: '2em'
+        }
     }
 })(Box)
 
@@ -80,7 +87,7 @@ const Steps = () => {
                         3
                     </NumberText>
                     <BookText>
-                        Wait for a response from our awesome team
+                        Wait for a reply from our awesome team
                     </BookText>
                 </StepsBox>
             </Slide>
