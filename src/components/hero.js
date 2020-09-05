@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Typography, Button, withStyles } from '@material-ui/core'
 import bgImg from '../images/slc-dreads-homepage.jpg'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import styles from './hero.module.css'
 
 const CustomButton = withStyles({
     root: {
@@ -44,7 +45,8 @@ const H1 = withStyles({
         width: '90%', 
         textAlign: 'center',
         fontSize: '5.6em',
-        margin: '20px auto'
+        margin: '20px auto',
+        textShadow: '-1px 1px var(--secondary-dark), -2px 2px var(--secondary-dark), -3px 3px var(--secondary-dark), -4px 4px var(--secondary-dark), -5px 5px var(--secondary-dark), -6px 6px var(--secondary-dark), -7px 7px var(--secondary-dark), -8px 8px var(--secondary-dark)'
     }
 })(Typography)
 
@@ -56,7 +58,7 @@ const Hero = ({ sitetitle }) => {
                 {sitetitle}
             </H1>
             <CustomButton variant='outlined' color='primary'>Book Appointment</CustomButton>
-            <ExpandMoreIcon color='primary' style={{fontSize: '2em', width: '4em', height: '4em'}} />
+            <ExpandMoreIcon className={styles.wobbleHorBottom} color='primary' style={{fontSize: '2em', width: '4em', height: '4em'}} />
         </CustomBox>
     )
 }
