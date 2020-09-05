@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { withStyles, Box, Typography, Zoom } from '@material-ui/core'
