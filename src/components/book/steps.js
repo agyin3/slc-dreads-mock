@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Typography, Box, withStyles, Slide } from '@material-ui/core'
 
 const StepsWrapper = withStyles({
@@ -39,12 +39,20 @@ const BookText = withStyles({
 })(Typography)
 
 const Steps = () => {
-    const [scroll, setScroll] = useState(window.scrollY)
-    window.addEventListener('scroll', () => setScroll(window.scrollY))
+    const [scroll, setScroll] = useState(0)
+    const [height, setHeight] = useState(10000)
+
+    // Grabbing scroll position
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        setScroll(window.scrollY)
+      })
+      setHeight(window.innerHeight)
+    }, [])
 
     return(
         <StepsWrapper>
-            <Slide in={scroll >= window.innerHeight * 2} direction='right' timeout={750}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750}>
                 <StepsBox>
                     <NumberText variant='h1' component='p'>
                         1
@@ -55,7 +63,7 @@ const Steps = () => {
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= window.innerHeight * 2} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
                 <StepsBox style={{alignSelf: 'center'}}>
                     <NumberText variant='h1' component='p'>
                         2
@@ -66,7 +74,7 @@ const Steps = () => {
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= window.innerHeight * 2} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
                 <StepsBox style={{alignSelf: 'flex-end'}}>
                     <NumberText variant='h1' component='p'>
                         3

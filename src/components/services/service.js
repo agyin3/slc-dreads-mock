@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { withStyles, Box, Typography, Zoom } from '@material-ui/core'
@@ -57,12 +57,16 @@ const ServiceText = withStyles({
 })(Typography)
 
 const Service = () => {
-    const [scroll, setScroll] = useState(window.scrollY)
+    const [scroll, setScroll] = useState(0)
+    const [height, setHeight] = useState(10000)
 
     // Grabbing scroll position
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY)
-    })
+    useEffect(() => {
+      window.addEventListener('scroll', () => {
+        setScroll(window.scrollY)
+      })
+      setHeight(window.innerHeight)
+    }, [])
 
     const data = useStaticQuery(graphql`
       query {
@@ -93,7 +97,7 @@ const Service = () => {
     `)
     return (
         <ServicesWrapper>
-          <Zoom in={scroll >= (window.innerHeight / 1.25)} timeout={750}>
+          <Zoom in={scroll >= (height / 1.25)} timeout={750}>
             <ServiceBox>
                 <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image1.childImageSharp.fluid} />
                 <ServiceText component='p'>
@@ -103,7 +107,7 @@ const Service = () => {
           </Zoom>
 
           <Zoom 
-          in={scroll >= (window.innerHeight / 1.25)} 
+          in={scroll >= (height / 1.25)} 
           timeout={750} 
           style={{transitionDelay:'250ms'}}
           >
@@ -116,7 +120,7 @@ const Service = () => {
           </Zoom>
 
           <Zoom 
-          in={scroll >= (window.innerHeight / 1.25)} 
+          in={scroll >= (height / 1.25)} 
           timeout={750} 
           style={{transitionDelay: '500ms'}}
           >
