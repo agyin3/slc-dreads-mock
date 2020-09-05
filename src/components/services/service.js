@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { withStyles, Box, Typography } from '@material-ui/core'
+import { withStyles, Box, Typography, Zoom } from '@material-ui/core'
 
 
 const ServiceBox = withStyles({
@@ -57,6 +57,13 @@ const ServiceText = withStyles({
 })(Typography)
 
 const Service = () => {
+    const [scroll, setScroll] = useState(window.scrollY)
+
+    // Grabbing scroll position
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY)
+    })
+
     const data = useStaticQuery(graphql`
       query {
         image1: file(relativePath: { eq: "services_1.jpg" }) {
@@ -86,26 +93,40 @@ const Service = () => {
     `)
     return (
         <ServicesWrapper>
-        <ServiceBox>
-            <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image1.childImageSharp.fluid} />
-            <ServiceText component='p'>
-                New Dreadlocks
-            </ServiceText>
-        </ServiceBox>
+          <Zoom in={scroll >= (window.innerHeight / 1.25)} timeout={750}>
+            <ServiceBox>
+                <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image1.childImageSharp.fluid} />
+                <ServiceText component='p'>
+                    New Dreadlocks
+                </ServiceText>
+            </ServiceBox>
+          </Zoom>
 
-        <ServiceBox>
-            <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image2.childImageSharp.fluid} />
-            <ServiceText component='p'>
-                Maintanence
-            </ServiceText>
-        </ServiceBox>
+          <Zoom 
+          in={scroll >= (window.innerHeight / 1.25)} 
+          timeout={750} 
+          style={{transitionDelay:'250ms'}}
+          >
+            <ServiceBox>
+                <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image2.childImageSharp.fluid} />
+                <ServiceText component='p'>
+                    Maintanence
+                </ServiceText>
+            </ServiceBox>
+          </Zoom>
 
-        <ServiceBox>
-            <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image3.childImageSharp.fluid} />
-            <ServiceText component='p'>
-                Wraps & Beads
-            </ServiceText>
-        </ServiceBox>
+          <Zoom 
+          in={scroll >= (window.innerHeight / 1.25)} 
+          timeout={750} 
+          style={{transitionDelay: '500ms'}}
+          >
+            <ServiceBox>
+                <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image3.childImageSharp.fluid} />
+                <ServiceText component='p'>
+                    Wraps & Beads
+                </ServiceText>
+            </ServiceBox>
+          </Zoom>
         </ServicesWrapper>
     )
 }
