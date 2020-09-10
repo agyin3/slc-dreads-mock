@@ -86,7 +86,7 @@ const Service = ({ scroll, height }) => {
     `)
     return (
         <ServicesWrapper>
-          <Zoom in={scroll >= height} timeout={750}>
+          <Zoom in={scroll >= height * .8} timeout={750}>
             <ServiceBox>
                 <Img style={{height: '200px', width: '200px', borderRadius: '50%'}} fluid={data.image1.childImageSharp.fluid} />
                 <ServiceText component='p'>
@@ -96,7 +96,7 @@ const Service = ({ scroll, height }) => {
           </Zoom>
 
           <Zoom 
-          in={scroll >= height} 
+          in={scroll >= height * .8} 
           timeout={750} 
           style={{transitionDelay:'250ms'}}
           >
@@ -109,7 +109,7 @@ const Service = ({ scroll, height }) => {
           </Zoom>
 
           <Zoom 
-          in={scroll >= height} 
+          in={scroll >= height * .8} 
           timeout={750} 
           style={{transitionDelay: '500ms'}}
           >

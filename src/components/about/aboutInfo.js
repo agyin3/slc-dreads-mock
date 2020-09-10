@@ -66,22 +66,22 @@ const AboutInfo = ({ scroll, height }) => {
     `)
     return (
         <InfoWrapper>
-            <Slide direction='right' in={scroll >= height * 3.25} timeout={1000}>
+            <Slide direction='right' in={scroll >= height * 3} timeout={1000}>
             <Img className={styles.aboutImg} fluid={data.image1.childImageSharp.fluid} />
             </Slide>
             <TextWrapper>
-                <Slide direction='up' in={scroll >= height * 3.25} timeout={1000}>
+                <Slide direction='up' in={scroll >= height * 3} timeout={1000}>
                 <InfoHeading variant='h2' component='p' gutterBottom>
                     Making Utah Cool<br/> One DreadLock At A Time
                 </InfoHeading>
                 </Slide>
                 
-                <Slide direction='up' in={scroll >= height * 3.25} timeout={1000}>
+                <Slide direction='up' in={scroll >= height * 3} timeout={1000}>
                 <AboutText component='p' gutterBottom>
                     Have you always wanted dreadlocks but didn't know where to start? Well... now there is a solution "Salt Lake City Dreadlock Shop" can give you dreads in Salt Lake City, Utah.  
                 </AboutText>
                 </Slide>
-                <Slide direction='up' in={scroll >= height * 3.25} timeout={1000}>
+                <Slide direction='up' in={scroll >= height * 3} timeout={1000}>
                 <AboutText component='p' gutterBottom>
                     We use an Asian method called the "crochet method" were we back comb then "crochet" your dreads into place. Then your dread journey begins. 
                 </AboutText>

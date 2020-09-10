@@ -48,7 +48,7 @@ const BookText = withStyles({
 const Steps = ({ scroll, height }) => {
     return(
         <StepsWrapper>
-            <Slide in={scroll >= height * 2.25} direction='right' timeout={750}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750}>
                 <StepsBox>
                     <NumberText variant='h1' component='p'>
                         1
@@ -59,7 +59,7 @@ const Steps = ({ scroll, height }) => {
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= height * 2.25} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
                 <StepsBox style={{alignSelf: 'center'}}>
                     <NumberText variant='h1' component='p'>
                         2
@@ -70,7 +70,7 @@ const Steps = ({ scroll, height }) => {
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= height * 2.25} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
                 <StepsBox style={{alignSelf: 'flex-end'}}>
                     <NumberText variant='h1' component='p'>
                         3
