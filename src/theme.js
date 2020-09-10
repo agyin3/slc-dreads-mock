@@ -29,7 +29,7 @@ theme.typography.h1 = {
 
 theme.typography.h2 = {
     fontFamily: 'Yanone Kaffeesatz, cursive',
-    fontSize: '3.6em'
+    fontSize: '4.2em'
 }
 
 theme.typography.h3 = {
