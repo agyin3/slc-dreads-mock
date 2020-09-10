@@ -6,15 +6,15 @@ import AboutInfo from './aboutInfo'
 const AboutBox = withStyles({
     root: {
         backgroundColor: 'var(--black)',
-        padding: '7.5% 0'
+        padding: '3% 0',
     }
 })(Box)
 
-const About = () => {
+const About = ({ scroll, height }) => {
     return(
         <AboutBox>
             <SubHeading text='About Us' />
-            <AboutInfo />
+            <AboutInfo scroll={scroll} height={height} />
         </AboutBox>
     )
 }
