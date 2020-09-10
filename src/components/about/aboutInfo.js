@@ -70,7 +70,7 @@ const AboutInfo = ({ scroll, height }) => {
             <Img className={styles.aboutImg} fluid={data.image1.childImageSharp.fluid} />
             </Slide>
             <TextWrapper>
-                <Slide direction='left' in={scroll >= height * 3.25} timeout={1000}>
+                <Slide direction='up' in={scroll >= height * 3.25} timeout={1000}>
                 <InfoHeading variant='h2' component='p' gutterBottom>
                     Making Utah Cool<br/> One DreadLock At A Time
                 </InfoHeading>
