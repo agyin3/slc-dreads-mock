@@ -6,16 +6,16 @@ import SubHeading from '../ui/SubHeading'
 const ServicesBox = withStyles({
     root: {
         backgroundColor: 'var(--black)',
-        padding: '7.5% 0'
+        padding: '3% 0'
     }
 })(Box)
 
 
-const Services = () => {
+const Services = ({ scroll, height }) => {
     return(
         <ServicesBox>
             <SubHeading text='Featured Services' />
-            <Service />
+            <Service scroll={scroll} height={height} />
         </ServicesBox>
     )
 }

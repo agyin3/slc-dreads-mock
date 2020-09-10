@@ -16,18 +16,18 @@ const BookBox = withStyles({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        padding: '7.5% 0',
+        padding: '3% 0',
         '@media (min-width: 1366px)': {
             backgroundAttachment: 'fixed',
         }
     }
 })(Box)
 
-const Book = () => {
+const Book = ({ scroll, height }) => {
     return(
         <BookBox>
             <SubHeading text='Book Appointment' />
-            <Steps />
+            <Steps scroll={scroll} height={height} />
         </BookBox>
     )
 }
