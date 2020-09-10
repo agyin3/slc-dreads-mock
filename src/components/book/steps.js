@@ -48,18 +48,18 @@ const BookText = withStyles({
 const Steps = ({ scroll, height }) => {
     return(
         <StepsWrapper>
-            <Slide in={scroll >= height * 1.8} direction='right' timeout={750}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750}>
                 <StepsBox>
                     <NumberText variant='h1' component='p'>
                         1
                     </NumberText>
                     <BookText>
-                        Text us a picture of your hair to <span style={{color: 'var(--primary-dark)', fontWeight: 800}}>(801) 824-8298</span>
+                        Text us a picture of your hair to <span style={{color: 'var(--primary-dark)', fontWeight: 800, textDecoration: 'none'}}>(801) 824-8298</span>
                     </BookText>
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= height * 1.8} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '250ms'}}>
                 <StepsBox style={{alignSelf: 'center'}}>
                     <NumberText variant='h1' component='p'>
                         2
@@ -70,7 +70,7 @@ const Steps = ({ scroll, height }) => {
                 </StepsBox>
             </Slide>
 
-            <Slide in={scroll >= height * 1.8} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
+            <Slide in={scroll >= height * 2} direction='right' timeout={750} style={{transitionDelay: '500ms'}}>
                 <StepsBox style={{alignSelf: 'flex-end'}}>
                     <NumberText variant='h1' component='p'>
                         3
